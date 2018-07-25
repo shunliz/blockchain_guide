@@ -36,7 +36,7 @@
 
 为保证运行区块时间不变，问题的复杂性会发生变化。有时，会存在多名矿工同时解决了问题。在这种情况下，每位矿工从中选取一个区块链，并以选取最长链者为获胜者。因此，如果假定大多数矿工工作在同一个链上，那么成长最快的链将成为最长和最值得信任的链。这样，只要由矿工提交的工作有超过一半是值得信任的，那么 Bitcoin 就是安全的。
 
-2. 权益证明（PoS，Proof of Stake）
+1. 权益证明（PoS，Proof of Stake）
 
 优点：
 
@@ -68,13 +68,13 @@
 
 但是 PoS 会在“无厉害关系”上出问题。这种对多个区块历史（forks）投票的方式不会让区块生成器有任何损失，进而阻碍了达成共识。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/nqH5KZwtdCZAI2VeBnt6YtSZsoqbVdAhxlcOUFa89yOx8icXa5ROvJoY5sDNkiavx4GpSE92A0fwbNpxUwlKgWbA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](/assets/import2.png)
 
 在 PoS 中，你可以在区块链的双方押注资产（“无厉害关系”问题）。而在 PoW 中，你不能从链的两个方向同时挖矿，因为这难以实现。
 
 不同于 PoW 系统（用户为扩展链必须做大量的计算），PoS 在多个链上工作的代价很小。有一些项目试图通过多种方式解决这个问题（参见“扩展阅读”）。例如，一个解决方案就是上文所介绍的，对不好的验证者做惩罚。
 
-3. 延迟工作量证明（dPoW，Delayed Proof-of-Work）
+1. 延迟工作量证明（dPoW，Delayed Proof-of-Work）
 
 优点：
 
@@ -96,11 +96,11 @@
 
 解释：dPoW 是一种混合共识方法，允许一个区块链利用第二个区块链的哈希算力（Hashing Power）所提供的安全。该机制是通过一组公证员节点（Notary Node）实现的。公证员节点实现将第一个区块链的数据添加到第二个区块链中。进而，第二个区块链请求在两个区块链间达成妥协，弱化第一个区块链的安全。Komodo 是首个使用该共识方法的区块链，它就是附加于 Bitcoin 区块链之上的。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/nqH5KZwtdCZAI2VeBnt6YtSZsoqbVdAhpCvHFPv7iaP3Vkv5p9OeJrniah6AQ2eqHYDHyct0DMxxliaNVNe6Xbtdg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](/assets/import3.png)
 
 使用 dPoW 的区块链也可以使用 PoW 或 PoS 共识方法工作，并可以附加在任何采用 PoW 的区块链上。但对于由 dPoW 提供安全的区块链，当前 Bitcoin 给出了最高安全层级的哈希率。下图展示了主区块链的单个记录以及其所附着的 PoW 区块链。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/nqH5KZwtdCZAI2VeBnt6YtSZsoqbVdAht2feJdvpXxXzicECU4VkgPC5OFiaBq7M6278sn0f9srzAAh9ICgZ5SjA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](/assets/import4.png)
 
 dPoW 系统中有两种类型的节点：公证人节点和正常节点。64 个公证人节点是由 dPoW 区块链的权益持有者（stakeholder）选举产生的，它们可从 dPoW 区块链向所附加的 PoW 区块链添加经公证确认的块。一旦添加了一个块，该块的哈希值将被添加到由 33 个公证人节点签署的 Bitcoin 交易中，并创建一个哈希到 Bitcoin 区块链的 dPow 块记录。该记录已被网络中的大多数公证人节点公证。
 
@@ -108,7 +108,7 @@ dPoW 系统中有两种类型的节点：公证人节点和正常节点。64 个
 
 但这会导致一些问题。我在与 Komodo 创始人的一次谈话中提及，这将导致公证人矿工和正常矿工间的哈希率存在很高的差异：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/nqH5KZwtdCZAI2VeBnt6YtSZsoqbVdAh9x4fjPvtEibGe0acSexUhmcQLmHZhMhhFouJXjb0j7ibvUIytQSRvudw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](/assets/import5.png)
 
 图 本文作者与 Komodo 创始人间就不一致性问题进行交流的截图
 
@@ -122,7 +122,7 @@ dPoW 系统在设计上支持区块链在没有公证人节点的情况下继续
 
 最后一点，公证人节点和正常节点分离的功能，确保了初始共识机制在公证人节点失败时继续运行。这种相互独立性建立了一种奖励机制，使得其它网络无需依赖于 Bitcoin 网络的直接功能，即可支持 Bitcoin 网络的继续维护。
 
-4. 授权 PoS（DPoS，Delegated Proof-of-Stake）
+1. 授权 PoS（DPoS，Delegated Proof-of-Stake）
 
 优点：
 
@@ -150,7 +150,7 @@ dPoW 系统在设计上支持区块链在没有公证人节点的情况下继续
 
 这非常快！
 
-5. 权威证明（PoA，Proof-of-Authority）
+1. 权威证明（PoA，Proof-of-Authority）
 
 优点：
 
@@ -178,7 +178,7 @@ dPoW 系统在设计上支持区块链在没有公证人节点的情况下继续
 
 使用 PoA，每个个体都具有变成验证者的权利，因此存在一旦获取就保持验证者位置的动机。通过对身份附加一个声誉，可以鼓励验证者去维护交易的过程。因为验证者并不希望让自己获得负面声誉，这会使其失去来之不易的验证者地位。
 
-6. 权重证明（PoWeight，Proof-of-Weight）
+1. 权重证明（PoWeight，Proof-of-Weight）
 
 优点：
 
@@ -196,7 +196,7 @@ dPoW 系统在设计上支持区块链在没有公证人节点的情况下继续
 
 解释：权重证明（PoWeight）是一类很宽泛的共识算法，它基于 Algorand 共识模型。其基本理念是在 PoS 中，用户所拥有的网络中令牌的百分比，表示了该用户“发现”下一个区块的概率。PoWeight 系统中还使用了其它一些相对加权值，实现包括声望证明（PoR，Proof of Reputation）和空间证明（Proof of Space）。
 
-7. 声誉证明（PoR，Proof of Reputation）
+1. 声誉证明（PoR，Proof of Reputation）
 
 ![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
@@ -220,7 +220,7 @@ PoR 共识模型依赖参与者在保持网络安全中的声誉。参与者（�
 
 在“扩展阅读”中提供了更多详细信息。
 
-8. 所用时间证明（PoET，Proof of Elapsed Time）
+1. 所用时间证明（PoET，Proof of Elapsed Time）
 
 优点：
 
@@ -284,7 +284,7 @@ PoSpace 是由证明者 \(Prover\) 发送给验证者 \(Verifier\) 的一小块�
 
 由于存储的通用本质，以及存储所需的更低耗能，PoSpace 被认为是一种更公平、更绿色的替换方法。
 
-10. 历史证明（PoHistory，Proof of History）
+1. 历史证明（PoHistory，Proof of History）
 
 采用者：Solana
 
@@ -304,13 +304,13 @@ VDF 的一个特定实现使用了持续运行于其上的顺序抗预映射哈�
 
 在“扩展阅读”中提供了更多详细信息。
 
-11. 权益流通证明（PoSV，Proof of Stake Velocity）
+1. 权益流通证明（PoSV，Proof of Stake Velocity）
 
 采用者：Reddcoin
 
 解释：PoSV 是作为 PoW 和 PoS 的一种替代方法而提出的，其目的是提高 P2P 网络的安全性，进而用于确认 Reddcoin 交易。Reddcoin 是一种加密货币，专为加速数字化时代的社交交互而提出的。PoSV 在设计上鼓励所有者（权益）和活动（流通），直接对应于 Reddcoin 作为真实货币的两个主要功能，即存储价值和交换中介。Reddcoin 也可在异构社交场景中作为计量单位使用。
 
-12. 重要性证明（PoImportance，Proof of Importance）
+1. 重要性证明（PoImportance，Proof of Importance）
 
 优点：
 
@@ -324,7 +324,7 @@ VDF 的一个特定实现使用了持续运行于其上的顺序抗预映射哈�
 
 需要指出的是，NEM 的 PoImportance 对任何操控都具有抵制力。该共识的底层机制可缓解女巫攻击（Sybil Attack）和循环攻击问题。谨记，“PoImportance 并非 PoS”，尽管两者很容易被同等看待。
 
-13. 烧毁证明（PoBurn，Proof of Burn）
+1. 烧毁证明（PoBurn，Proof of Burn）
 
 采用者：Slimcoin、TGCoin（第三代代币）。
 
@@ -336,13 +336,13 @@ PoBurn 有多种实现方式，矿工可以烧毁原生的货币，或者烧毁�
 
 尽管 PoBurn 是一种有意思的 PoW 替代者，但是该协议依然会毫无必要地浪费资源。另一个批评是，挖矿能力只会偏向于那些愿意烧掉更多钱的人。
 
-14. 身份证明（PoI，Proof of Identity）
+1. 身份证明（PoI，Proof of Identity）
 
 解释：PoI 是一块表示了加密事实的数据。它支持用户指定一个私钥，并对应到一个经认证的身份，加密将附着到一个指定的交易。来自于某些组中的每个个体都可以创建 PoF\(因为它只是一块数据\)，并将该数据展示给其它任何处理节点的人。
 
 扩展阅读：Proof of Identity
 
-15. 活动证明（PoActivity，Proof Of Activity）
+1. 活动证明（PoActivity，Proof Of Activity）
 
 使用者：Decred
 
@@ -358,7 +358,7 @@ PoBurn 有多种实现方式，矿工可以烧毁原生的货币，或者烧毁�
 
 对 PoActivity 的批评包括挖掘区块耗能过高（与 PoW 一样），以及无法阻止验证者做双重签名（与 PoS 一样）。
 
-16. 时间证明（PoTime，Proof of Time）
+1. 时间证明（PoTime，Proof of Time）
 
 使用者：Chronologic
 
@@ -366,7 +366,7 @@ PoBurn 有多种实现方式，矿工可以烧毁原生的货币，或者烧毁�
 
 我们的问题在于，Solidity 中一个变量可存储的最大数是 1076 的数量级。这使我们很难处理时间生成和令牌生成。
 
-17. 存在证明（PoExistence，Proof of Existence）
+1. 存在证明（PoExistence，Proof of Existence）
 
 使用者：Poex.io、HeroNode、DragonChain。
 
@@ -386,19 +386,19 @@ PoExistence 是作为一项开源项目在 2013 年提出的，由 Manuel Araoz 
 
 * 检查文档完整性。
 
-18. Ouroboros
+* Ouroboros
 
 采用者：Cardano
 
 解释：Ouroboros 是 Cardano 使用的共识算法。它是 PoS 的一个变种，具有严格的安全性保证。
 
-19. 可收回证明（PoR，Proof of Retrievability）
+1. 可收回证明（PoR，Proof of Retrievability）
 
 采用者：Microsoft
 
 解释：PoR 是一种紧凑证明，表示文件系统（证明者）中的目标文件 F 对客户端（验证者）而言是完整的。由于使用 PoR 比传输文件 F 本身而言具有更低的通信复杂性，因此 PoR 对于构建高可靠的远程存储系统是一种颇具吸引力的构建模块。作为一种共识算法，PoR 对于云计算系统非常有用。
 
-20. 拜占庭容错（Byzantine Fault Tolerance）
+1. 拜占庭容错（Byzantine Fault Tolerance）
 
 ![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
@@ -422,7 +422,7 @@ PoExistence 是作为一项开源项目在 2013 年提出的，由 Manuel Araoz 
 
 由于 FBA 可提供令人难以置信的吞吐量、低交易开销和网络扩展性，我相信 FBA 类公式算法是目前提出的最好的分布式共识发现算法。
 
-21. 授权拜占庭容错算法（dBFT，Delegated Byzantine Fault Tolerance）
+1. 授权拜占庭容错算法（dBFT，Delegated Byzantine Fault Tolerance）
 
 优点：
 
@@ -444,7 +444,7 @@ Neo 的 dBFT 机制生成一个区块需 15 到 20 秒钟。交易吞吐量测�
 
 dBFT 中加入了数字身份技术，这意味着 bookkeeper 可以是真实的个人，也可以是某些机构。因此，dBFT 根据存在于其本身之中的司法判决，可以冻结、撤销、继承、检索和拥有代币兑换权。它有利于实现合规金融资产在 Neo 网络中的注册。Neo 网络从设计上，就是在必要时为此提供支持。
 
-22. RAFT
+1. RAFT
 
 ![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
@@ -464,7 +464,7 @@ dBFT 中加入了数字身份技术，这意味着 bookkeeper 可以是真实的
 
 Raft 通过选取领导者实现共识。在 Raft 集群中，一个服务器可以是领导者（leader），也可以是追随者（follower），也可以作为一些特定选举情况下（例如缺少领导者）的候选者。领导者负责向追随者发送日志副本。领导者通过发送心跳消息，定期通知追随者自身的存活情况。每位追随者维护一个超时（通常在 150 到 300 毫秒之间），正常情况下应在此时间范围内收到领导者的心跳。一旦收到心跳，超时就会重置。如果没有收到心跳，那么追随者就将自身状态更改为候选者，并开始领导者选举。
 
-23. 恒星共识（Stellar Consensus）
+1. 恒星共识（Stellar Consensus）
 
 ![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
@@ -484,7 +484,7 @@ Raft 通过选取领导者实现共识。在 Raft 集群中，一个服务器可
 
 恒星共识协议（SCP，Stellar Consensus Protocol）提供了一种不依赖闭合系统实现准确记录金融交易而达成共识的方法。SCP 具有一组可验证的安全属性，这些属性根据如何安全地保持活力而做了优化。一旦出现分区或不当行为节点，它将会终止网络过程，直至达成共识。SCP 同时具备四种属性：去中心控制、低延迟、灵活信任机制和渐进安全。
 
-24. 置信度证明（PoB，Proof of Believability）
+1. 置信度证明（PoB，Proof of Believability）
 
 ![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
@@ -510,10 +510,9 @@ PoB 共识协议使用一种分片内“可信度优先”的方法。该协议�
 
 但是，由于只有一个节点在执行验证，因此 PoB 可能会存在安全问题。行为不当的验证者可能会提交一些已损坏的交易。为了解决这个安全问题，PoB 指定了一个采样概率。普通验证者根据概率对交易做采样，并检测交易的不一致性。如果验证者被检测出存在不良行为，那么该验证者将会失去所有系统中的令牌和声誉，而被欺诈的用户将获得所有损失的补偿。“可信度优先”使处理交易非常快，因为只有一个（可信的）验证者执行验证，并且该验证者不太可能存在行为不端。
 
-25. 有向无环图（DAG，Directed Acyclic Graphs）
+1. 有向无环图（DAG，Directed Acyclic Graphs）
 
-优点：  
-
+优点：
 
 * 由于 DAG 的非线性结构，它是高度可扩展的。
 
@@ -587,5 +586,5 @@ MC 上相邻交易的证人列表要么完全相同，要么只存在一个突�
 
 作者介绍：Vaibhav Saini 是一家由 MIT Cambridge Innovation Center 孵化的初创企业 TowardsBlockchain 的联合创始人。Saini 是一名高级区块链开发人员，具有 Ethereum、Quorum、EOS、Nano、Hashgraph、IOTA 等多种区块链平台的工作经验。Saini 目前是德里印度理工学院（IIT Delhi）的一名大二学生。
 
-原文链接：https://hackernoon.com/consensuspedia-an-encyclopedia-of-29-consensus-algorithms-e9c4b4b7d08f
+原文链接：[https://hackernoon.com/consensuspedia-an-encyclopedia-of-29-consensus-algorithms-e9c4b4b7d08f](https://hackernoon.com/consensuspedia-an-encyclopedia-of-29-consensus-algorithms-e9c4b4b7d08f)
 
