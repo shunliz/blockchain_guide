@@ -1,4 +1,4 @@
-# 区块链技术指南
+# Summary
 
 * [前言](README.md)
 * [修订记录](revision.md)
@@ -46,6 +46,7 @@
   * [同态加密](crypto/homoencryption.md)
   * [其它问题](crypto/others.md)
   * [本章小结](crypto/summary.md)
+  * [共识算法介绍](crypto/gong-shi-suan-fa-jie-shao.md)
 * [比特币 —— 区块链思想诞生的摇篮](bitcoin/README.md)
   * [比特币项目简介](bitcoin/intro.md)
   * [实体货币到加密数字货币](bitcoin/currency.md)
@@ -114,3 +115,4 @@
     * [高效开发工具](appendix/golang/tools.md)
   * [ProtoBuf 与 gRPC](appendix/grpc.md)
   * [参考资源链接](appendix/resources.md)
+
